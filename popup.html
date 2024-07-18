@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetHub</title>
+    <style>
+        :root {
+            --primary-color: #f18500;
+            --secondary-color: #4a4a4a;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            min-width: 300px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #title span {
+            color: var(--primary-color);
+        }
+
+        #caption {
+            font-size: 14px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #e67e00;
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #commit_mode p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        #commit_mode span {
+            font-weight: bold;
+        }
+
+        #socials {
+          margin-top: 20px;
+      display: flex;
+      justify-content: center;
+        }
+
+        #socials a {
+          color: var(--secondary-color);
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 18px;
+      transition: var(--transition);
+        }
+
+        #socials a:hover {
+            color: var(--primary-color);
+        }
+
+        .onboarding {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .social-heading {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Leet<span>Hub</span> <span> 2.0</span></h1>
+        <p id="caption">Sync your code from LeetCode to GitHub</p>
+        
+        <div id="auth_mode" class="hidden">
+            <p class="onboarding">Authenticate with GitHub to use <strong>Leet<span style="color: var(--primary-color)">Hub</span></strong></p>
+            <button id="authenticate" class="button">
+                <span class="icon">&#xf09b;</span>
+                Authenticate
+            </button>
+        </div>
+
+        <div id="hook_mode" class="hidden">
+            <p class="onboarding">Set up repository hook to use <strong>Leet<span style="color: var(--primary-color)">Hub</span></strong></p>
+            <a id="hook_URL" href="" target="blank" class="button">
+                <span class="icon">&#xf09b;</span>
+                Set up Hook
+            </a>
+        </div>
+
+        <div id="commit_mode" class="hidden">
+            <p id="repo_url"></p>
+            <p class="onboarding">Problems Solved: <span id="p_solved">0</span></p>
+            <p>
+                <span style="color: #5cb85c">Easy:</span>
+                <span id="p_solved_easy">0</span>
+                <span style="color: #f0ad4e">Medium:</span>
+                <span id="p_solved_medium">0</span>
+                <span style="color: #d9534f">Hard:</span>
+                <span id="p_solved_hard">0</span>
+            </p>
+            <p>
+                Want more features?
+                <a style="color: var(--primary-color);" target="_blank" href="https://github.com/QasimWani/LeetHub/labels/feature">Request a feature!</a>
+            </p>
+        </div>
+
+        <div id="socials">
+            <a href="https://github.com/QasimWani/LeetHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+
+            <a id="welcome_URL" href="" target="_blank"><i class="fa-solid fa-house"></i></a>
+        </div>
+        
+      
+    </div>
+
+    <script src="scripts/oauth2.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
